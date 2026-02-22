@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dylan Sprouse | Digital Website & Software Developer</title>
+  <meta name="description" content="Dylan Sprouse. Digital Website & Software Developer. Financial Services Representative (Merrill Guided Investing). Resume and portfolio." />
+
+  <style>
+
+:root{
+  --bg:#ffffff;
+  --ink:#0b1220;
+  --muted:#475569;
+  --muted2:#64748b;
+  --border: rgba(15,23,42,0.12);
+  --card:#ffffff;
+
+  --shadow: 0 20px 40px rgba(2,6,23,0.12);
+  --shadow2: 0 10px 22px rgba(2,6,23,0.10);
+
+  --accent:#1d4ed8;
+  --accent2:#0f172a;
+  --ring: rgba(29,78,216,0.20);
+
+  --r1:22px;
+  --r2:16px;
+  --max: 980px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  height:100%;
+}
+
+body{
+  margin:0;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(700px 300px at 15% -10%, rgba(29,78,216,0.07), transparent 60%),
+    radial-gradient(700px 400px at 92% 5%, rgba(15,23,42,0.05), transparent 62%),
+    #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{
+  color: var(--accent);
+  text-decoration:none;
+}
+a:hover{
+  text-decoration:underline;
+}
+
+/* Header */
+
+.top{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topin{
+  width: min(var(--max), calc(100% - 28px));
+  margin: 0 auto;
+  padding: 14px 0;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+}
+
+.mark{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  box-shadow: var(--shadow2);
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-weight: 900;
+}
+
+.brand b{
+  font-weight: 900;
+}
+
+.brand small{
+  display:block;
+  color: var(--muted);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* Buttons */
+
+.btns{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--ink);
+  padding: 12px 16px;
+  border-radius: 16px;
+  cursor:pointer;
+  font-weight: 900;
+  font-size: 14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  box-shadow: var(--shadow2);
+  transition: 140ms ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+}
+
+.btn.primary{
+  border:0;
+  color:#fff;
+  background: linear-gradient(135deg, #1d4ed8, #0f172a);
+  box-shadow: 0 20px 36px rgba(29,78,216,0.18);
+}
+
+.btn:focus{
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Layout */
+
+.wrap{
+  width: min(var(--max), calc(100% - 28px));
+  margin: 0 auto;
+  padding: 28px 0 64px;
+}
+
+.hero{
+  border: 1px solid var(--border);
+  background: #ffffff;
+  border-radius: var(--r1);
+  box-shadow: var(--shadow);
+}
+
+.heroInner{
+  padding: 30px;
+  display:grid;
+  gap: 22px;
+}
+
+h1{
+  margin:0;
+  font-size: clamp(26px, 5vw, 32px);
+  line-height: 1.15;
+}
+
+.titleLine{
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* Grid */
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+
+.span-12{ grid-column: span 12; }
+.span-6{ grid-column: span 6; }
+.span-4{ grid-column: span 4; }
+
+/* Cards */
+
+.card{
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--r2);
+  box-shadow: var(--shadow2);
+}
+
+.cardHd{
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid rgba(15,23,42,0.08);
+  background: rgba(2,6,23,0.02);
+}
+
+.cardHd .t{
+  margin:0;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cardHd .m{
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.cardBd{
+  padding: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* SUMMARY */
+
+.summaryBox{
+  border: 1px solid rgba(29,78,216,0.18);
+  background: rgba(29,78,216,0.06);
+  border-radius: var(--r2);
+  padding: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+}/* CONTACT SECTION */
+
+.contactCard{
+  grid-column: 1 / -1; /* full width across grid */
+  border: 2px solid rgba(29,78,216,0.28);
+  background: linear-gradient(180deg, rgba(29,78,216,0.08), #ffffff);
+  box-shadow: 0 40px 80px rgba(29,78,216,0.18);
+  padding: 48px 44px; /* significantly larger */
+  border-radius: 22px;
+  margin-top: 10px;
+}
+
+/* make inner content feel larger */
+.contactRow{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap:20px;
+  margin-bottom:28px;
+  flex-wrap:wrap;
+}
+
+.contactLeft{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.contactLabel{
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:0.5px;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+
+.contactValue{
+  font-size:20px; /* bigger */
+  font-weight:900;
+  color:var(--ink);
+}
+
+/* stronger copy button */
+
+.copyBtn{
+  min-width:120px;
+  padding:14px 20px;
+  border-radius:16px;
+  border:1px solid rgba(29,78,216,0.35);
+  background: linear-gradient(135deg, #1d4ed8, #0f172a);
+  color:#ffffff;
+  font-weight:900;
+  font-size:15px;
+  cursor:pointer;
+  transition: 150ms ease;
+  box-shadow: 0 16px 30px rgba(29,78,216,0.22);
+}
+
+.copyBtn:hover{
+  transform: translateY(-2px);
+}
+
+.copyBtn:active{
+  transform: scale(0.97);
+}
+
+.copyMsg{
+  font-size:14px;
+  font-weight:900;
+  color:var(--accent);
+  margin-left:10px;
+}
+
+/* iPhone scaling */
+
+@media (max-width: 640px){
+
+  .contactCard{
+    padding: 32px 22px;
+  }
+
+  .contactRow{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .contactValue{
+    font-size:18px;
+  }
+
+  .copyBtn{
+    width:100%;
+  }
+}
+
+/* COPY BUTTON */
+
+.copyBtn{
+  min-width:90px;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid rgba(29,78,216,0.25);
+  background: linear-gradient(135deg, #1d4ed8, #0f172a);
+  color:#ffffff;
+  font-weight:900;
+  font-size:14px;
+  cursor:pointer;
+  transition: 140ms ease;
+  box-shadow: 0 12px 24px rgba(29,78,216,0.20);
+}
+
+.copyBtn:hover{
+  transform: translateY(-1px);
+}
+
+.copyBtn:active{
+  transform: scale(0.97);
+}
+
+.copyMsg{
+  font-size:14px;
+  font-weight:900;
+  color:var(--accent);
+  margin-left:8px;
+}
+
+/* Footer */
+
+.footer{
+  margin-top: 24px;
+  color: var(--muted2);
+  font-size: 14px;
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Mobile */
+
+@media (max-width: 860px){
+  .span-6{ grid-column: span 12; }
+  .span-4{ grid-column: span 12; }
+
+  .topin{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .btns{
+    width:100%;
+  }
+
+  .btn{
+    flex: 1 1 auto;
+  }
+
+  .heroInner{
+    padding: 22px;
+  }
+
+  .contactRow{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .copyBtn{
+    width:100%;
+  }
+}
+
+/* Print */
+
+@media print{
+  .top{ display:none !important; }
+  body{ background:#fff; }
+  .wrap{ width:100%; padding:0; }
+  .hero{ border:0; box-shadow:none; }
+  .card{ box-shadow:none; }
+  .footer{ display:none; }
+  a{ color:#000; text-decoration:none; }
+}
+
+  </style>
+
+
+</head>
+
+<body>
+  <header class="top" role="banner">
+    <div class="topin">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">DS</div>
+        <div>
+          <b>Dylan Sprouse</b>
+          <small>Digital Website & Software Developer</small>
+        </div>
+      </div>
+
+      <div class="btns" aria-label="Actions">
+        <!-- Option 1: Real PDF file -->
+        <a class="btn primary" href="resume.pdf" download>Download PDF</a>
+
+        <!-- Option 2: Save as PDF via print dialog -->
+
+
+        <!-- Optional: Link out -->
+        <a class="btn" href="https://www.linkedin.com/in/dylan-sprouse-3a4a41273?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" role="main">
+    <section class="hero" aria-label="Resume">
+      <div class="heroInner">
+        <div>
+          <h1>Dylan Sprouse</h1>
+          <div class="titleLine">Digital Website & Software Developer | Financial Services Representative (Merrill Guided Investing)</div>
+        </div>
+
+        <div class="summaryBox" aria-label="Professional summary">
+          <b>Summary</b>
+          <p>
+            Systems-focused developer with a background in financial operations. I break down complex processes, identify friction points, and build clean, structured solutions.
+          </p>
+        </div>
+
+        <div class="grid" aria-label="Top info">
+  <div class="card span-6">
+  <div class="cardHd">
+    <p class="t">Contact</p>
+    <p class="m">Fast reach</p>
+  </div>
+  <div class="cardBd">
+
+    <div style="margin-bottom:12px;">
+      <b>Email:</b>
+      <a href="mailto:DylanM.Sprouse3455@gmail.com" id="emailLink">
+        DylanM.Sprouse3455@gmail.com
+      </a>
+      <button class="copyBtn" data-copy="DylanM.Sprouse3455@gmail.com">
+        Copy
+      </button>
+      <span class="copyMsg"></span>
+    </div>
+
+    <div>
+      <b>Phone:</b>
+      <a href="tel:4238232215" id="phoneLink">
+        423-823-2215
+      </a>
+      <button class="copyBtn" data-copy="4238232215">
+        Copy
+      </button>
+      <span class="copyMsg"></span>
+    </div>
+
+<br>
+      <b>Location:</b> Greeneville, TN
+</div>
+    <div style="margin-top:8px;">
+
+    </div>
+
+  </div>
+</div>
+
+        <div class="section" aria-label="Experience">
+          <details open class="card">
+            <summary class="cardHd" style="cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+              <span>
+                <span class="t" style="display:block;">Experience</span>
+                <span class="m" style="display:block;">Roles and impact</span>
+              </span>
+              <span aria-hidden="true" style="font-weight:950; color:var(--muted);">Open</span>
+            </summary>
+            <div class="cardBd">
+              <div style="margin-bottom:12px;">
+                <b>Financial Services Representative</b><br />
+                <span style="color:var(--muted); font-weight:800;">Merrill Guided Investing</span>
+                <span style="color:var(--muted2);"> | Nov 2025 to Present</span>
+                <ul style="margin-top:8px;">
+                  <li>Support clients with account access, platform navigation, and investment inquiries</li>
+                  <li>Maintain compliance and identity verification standards with accuracy and documentation discipline</li>
+                  <li>Troubleshoot workflow and system issues before escalation</li>
+                  <li>Communicate complex information clearly under time pressure</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom:12px;">
+                <b>Shift Manager and Supervising Customer Support Representative</b><br />
+                <span style="color:var(--muted); font-weight:800;">NRS Solutions</span>
+                <span style="color:var(--muted2);"> | May 2022 to May 2025</span>
+                <ul style="margin-top:8px;">
+                  <li>Led daily operations supporting multiple servicing clients and high-volume customer workflows</li>
+                  <li>Managed escalations and quality control to maintain accuracy and service standards</li>
+                  <li>Coached agents in real time on call control, documentation, and resolution strategy</li>
+                  <li>Monitored workflow bottlenecks and adjusted staffing allocation to stabilize performance</li>
+                </ul>
+              </div>
+
+              <div>
+                <b>Front-End Manager</b><br />
+                <span style="color:var(--muted); font-weight:800;">Food City (K-VA-T Food Stores Inc.)</span>
+                <span style="color:var(--muted2);"> | Jul 2016 to May 2022</span>
+                <ul style="margin-top:8px;">
+                  <li>Managed front-end operations, staffing coverage, and customer issue resolution</li>
+                  <li>Trained team members and maintained reliability during high-traffic periods</li>
+                  <li>Supported cash-handling controls and register auditing practices</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div class="section" aria-label="Projects">
+          <details open class="card">
+            <summary class="cardHd" style="cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+              <span>
+                <span class="t" style="display:block;">Selected Projects</span>
+
+              </span>
+              <span aria-hidden="true" style="font-weight:950; color:var(--muted);">Open</span>
+            </summary>
+            <div class="cardBd">
+              <div style="margin-bottom:12px;">
+                <b>Motherly Love Nonprofit, Donation Landing System</b><br />
+                <span style="color:var(--muted); font-weight:800;">Live:</span>
+                <a href="https://motherlylove333.github.io/Motherly-Love-Landing-Site/" target="_blank" rel="noopener">motherlylove333.github.io/Motherly-Love-Landing-Site</a>
+                <ul style="margin-top:8px;">
+                  <li>Architected and deployed a public-facing donation landing page to streamline nonprofit fundraising</li>
+                  <li>Created a direct Facebook-shareable link to remove friction between social media and the payment flow</li>
+                  <li>Integrated existing third-party payment source code into a clean, structured front-end</li>
+                  <li>Delivered a working integration bridge within 2 hours under a fixed-fee scope</li>
+                </ul>
+              </div>
+
+              <div>
+                <b>DS Digital Designs, Website Builds</b><br />
+                <span style="color:var(--muted); font-weight:800;">Live:</span>
+                <a href="https://dsdigitaldesigns.org/" target="_blank" rel="noopener">dsdigitaldesigns.org</a>
+                <ul style="margin-top:8px;">
+                  <li>Design and deploy mobile-first websites with structured information architecture</li>
+                  <li>Translate requirements into clear layout logic and conversion flow</li>
+                  <li>Prioritize usability, clarity, and system structure over visual clutter</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div class="section" aria-label="Education">
+          <details open class="card">
+            <summary class="cardHd" style="cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+              <span>
+                <span class="t" style="display:block;">Education</span>
+                
+     </span>
+              <span aria-hidden="true" style="font-weight:950; color:var(--muted);">Open</span>
+            </summary>
+            <div class="cardBd">
+              <b>High School Diploma</b> | Greenback High School | May 2020
+            </div>
+          </details>
+        </div>
+
+        <div class="footer">
+          <div>Tip: “Save as PDF” uses your browser print dialog. Choose “Save to PDF.”</div>
+          <div>For a real download link, upload a file named <b>resume.pdf</b> in this same folder.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+document.querySelectorAll(".copyBtn").forEach(btn=>{
+  btn.addEventListener("click", async ()=>{
+    const value = btn.getAttribute("data-copy");
+    const msg = btn.nextElementSibling;
+
+    try{
+      await navigator.clipboard.writeText(value);
+      msg.textContent = "Copied ✓";
+      setTimeout(()=> msg.textContent = "", 2000);
+    } catch(err){
+      msg.textContent = "Failed";
+    }
+  });
+});
+    document.getElementById("printBtn").addEventListener("click", () => {
+      window.print();
+    });
+  </script>
+</body>
+</html>
